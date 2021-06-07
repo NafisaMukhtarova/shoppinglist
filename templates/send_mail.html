@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+{{>header.html}}
+
+<body>
+<h1>{{title}}</h1>
+
+
+<div class="container">
+
+    <form action="send_mail.php" method="POST">
+        <div class="col-lg-4">
+            <label for="user" class="form-label">Исполнитель</label>
+            <select class="form-control" id="user" name = "user">
+            {{#each users}}
+                <option value = {{user_mail}}>{{user_name}} = </option>
+            {{/each}}
+            </select>
+        </div>
+        <div class="m-3">
+            <button type="submit" class="btn btn-primary" > Отправить письмо</button>
+        </div> 
+    </form>
+    <table class="table table-bordered">
+        
+    {{#each shopping_list}}
+        <div class="row">
+            <tr class="d-flex">
+                <td class="col"> {{category_name}}</td>
+                <td class="col"> {{product_name}}</td>
+            </tr>
+        </div>
+        
+    {{/each}}
+    </table>
+</div>
+
+</body>
+</html>

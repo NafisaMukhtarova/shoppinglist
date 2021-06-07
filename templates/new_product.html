@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+{{>header.html}}
+
+<body>
+    <div class="container">
+    <h1 class="text-center bg-danger">{{title}}</h1>
+
+    <div class = "col-6">
+        <form action="add_product.php" method="POST" enctype ="multipart/form-data">
+            <div class="mb-3">
+                <select class="form-control" id="CategorySelect" name = "category">
+                    {{#each categories}}
+                         <option value = {{category_id}}>{{category_name}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="product_name" class="form-label">Название продукта</label>
+               <input type="text" class="form-control" inactive id="product" name="product_name" required >
+           </div>
+           
+           <div class="mb-3">
+                 <button type="submit" class="btn btn-primary" > Добавить</button>
+            </div>
+
+        </form>
+  </div>
+</div>
+</body>

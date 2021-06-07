@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+{{>header.html}}
+
+<body>
+    <div class="container">
+    <h1 class="text-center bg-danger">Выбор продукта</h1>
+        <div class="m-4">
+                <div class="row justify-content-end">
+                        <div class=" col-3  align-self-end bg-white">
+                        <a href="new_product.php"> Добавить продукт</a>
+                        &nbsp;</div>
+                </div>
+        </div>
+    <form action = "add_product_to_list.php" method ="POST">
+        <div class="mb-3">
+            <input  type="text" name="item" />
+        </div>
+        
+        {{#each product}}
+        <div class="mb-3">
+            <input class="form-check-input" type="checkbox" name="Product_list[]" value="{{product_id}}" />{{product_name}}<br />
+        </div>
+        {{/each}}
+        <div class="mb-3">
+             <input type="submit" name="formSubmit" value="Submit" />
+        </div>
+    </form>
+    </div>
+</body>

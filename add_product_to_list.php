@@ -3,17 +3,9 @@ session_start();
 
 
 $product = $_POST['Product_list'];
-//$item = $_POST['item'];
 
-//var_dump($add);
-//echo 'item: '.$item.'!';
-
-
-//$list_id = $_POST['list_id'];
 $list_id = $_SESSION['list_id'];
 //echo $list_id;
-
-
 
 require_once 'connection.php';
 

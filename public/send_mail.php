@@ -1,34 +1,6 @@
 <?php
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-
-use Monolog\Logger;
-use Monolog\Handler\StreamHandler;
-
-
-use Handlebars\Handlebars;
-use Handlebars\Loader\FilesystemLoader;
-
-require 'vendor/autoload.php';
-
-
-    # Set the partials files
-$partialsDir = __DIR__."/templates";
-$partialsLoader = new FilesystemLoader($partialsDir,
-    [
-        "extension" => "html"
-    ]
-);
-
-# We'll use $handlebars throughout this the examples, assuming the will be all set this way
-$handlebars = new Handlebars([
-    "loader" => $partialsLoader,
-    "partials_loader" => $partialsLoader
-]);
-
-
-require_once 'connection.php';
+require_once 'bootstrap.php';
 
 $id=1;
 $config = new Config;

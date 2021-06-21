@@ -1,10 +1,7 @@
 <?php
 session_start();
 
-require_once 'connection.php';
-
-$config = new Config;
-$pdo = $config->Connect_PDO();
+require_once 'bootstrap.php';
 
 $data=[];
 $data = [':lname'=>$_POST['list_name']];

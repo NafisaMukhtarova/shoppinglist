@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'b8626821b28edb6d9acd4a764e1b3748cd25fd48',
+    'reference' => 'a8e6bd35f1892e38f1fc847837d6848996de384a',
     'name' => '__root__',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'b8626821b28edb6d9acd4a764e1b3748cd25fd48',
+      'reference' => 'a8e6bd35f1892e38f1fc847837d6848996de384a',
     ),
     'graham-campbell/result-type' => 
     array (
@@ -107,6 +107,15 @@
       array (
       ),
       'reference' => 'eca0bf41ed421bed1b57c4958bab16aa86b757d0',
+    ),
+    'twig/twig' => 
+    array (
+      'pretty_version' => 'v3.3.2',
+      'version' => '3.3.2.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '21578f00e83d4a82ecfa3d50752b609f13de6790',
     ),
     'vlucas/phpdotenv' => 
     array (

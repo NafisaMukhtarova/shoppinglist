@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% include "header.html" %}
+
+<body>
+    <div class="container">
+    <h1 class="text-center bg-danger">Список покупок </h1>
+    <h2 class="text-danger text-center">{{list_name}}</h2>
+
+        <div class="m-4">
+                <div class="row justify-content-end">
+                        <div class=" align-self-end bg-white">
+                        <a href="select_list.php"> Выбрать список</a>
+                        &nbsp;</div>
+                </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    
+                    <th><a href="select_product.php?list_id={{list_id}}">Добавить</a></th>
+                </tr>
+            </thead>
+        {% for list in shopping_list %}
+            <div class="row">
+                <tr class="d-flex">
+                    <td class="col-lg-4"> {{list.category_name}}</td>
+                    <td class="col-lg-6"> {{list.product_name}}</td>
+                    <td class="col-lg-2"> <a href="delete_item.php?id={{list.id}}" onclick="return confirm('Удалить продукт безврозвратно ?')">Удалить</a></td>
+                </tr>
+            </div>
+        {% endfor %}
+        </table>
+        </div>
+            <div class="m-4">
+                <div class=" col-3 bg-white"></div>>
+                    <a href="shopping.php?list_id={{list_id}}">  За покупками</a>
+                </div>
+                <div class="row justify-content-end">
+                    <div class=" col-3  align-self-end bg-white">
+                    <a href="send_mail.php?list_id={{list_id}}"> Выбрать и отправить исполнителю</a>
+                    &nbsp;</div>
+            </div>
+        </div>
+
+</body>

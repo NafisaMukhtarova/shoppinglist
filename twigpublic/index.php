@@ -37,7 +37,7 @@ while ($row = $result_shopping_list_2->fetch()) {
 }
 
 $model = ['list_name'=> $list_name,'list_id'=> $list_id,'shopping_list'=>$model_shopping_list];
-var_dump ($model);
+//var_dump ($model);
 
 $template = $twig->load('main.html');
 

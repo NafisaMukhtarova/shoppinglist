@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% include "header.html" %}
+
+<body>
+    {% include "navbar.html" %}
+    <div class="container">
+    <h1 class="text-center bg-danger">   Покупки </h1>
+
+
+        <div class="container">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        
+                        <th> Уже куплено:</th>
+                    </tr>
+                </thead>
+        {% set total = 0 %}
+            {% for list in shopping_list %}
+                {% if list.bought == 1 %} 
+                {% set total = total + list.price %}
+                <div class="row">
+                    <tr class="d-flex">
+                        <td class="col-lg-4"> {{list.category_name}}</td>
+                        <td class="col-lg-6"> {{list.product_name}}</td>
+                        <td class="col-lg-2"> {{list.price}}</td>
+                    </tr>
+                </div>
+                {% endif %}
+            {% endfor %}
+                <div class="row">
+                    <tr class="d-flex">
+                        <td class="col-lg">TOTAL: {{total}}</td>
+                    </tr>
+                </div>
+            </table>
+            
+            
+
+            <form action="shopping.php?list_id={{list_id}}" method="POST" enctype ="multipart/form-data">
+            {% for list in shopping_list %}
+                {% if list.bought == 0 %} 
+                <div class="form-inline">
+                    <div class="form-group">
+                        <input type="text" class="form-control m-3" inactive id="category"   value = "{{list.category_name}}" readonly >
+                   </div>
+                   <div class="form-group">
+                        <input type="text" class="form-control m-3" inactive id="product"   value = " {{list.product_name}}" readonly>
+                    </div>
+                    <div class="form-group">
+                        <input type="hidden" class="form-control m-3" inactive id="product" name="shopping_list_id[]"  value = " {{list.shopping_list_id}}" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Стоимость</label>
+                        <input type="text" class="form-control m-3" inactive id="price" name="price[]" >
+                    </div>
+                   
+                </div>
+                {% endif %}
+            {% endfor %}
+
+            <button type="submit" class="btn btn-primary" >  Купили</button>
+
+            </form>
+        </div>
+    </div>
+</body>
+<head

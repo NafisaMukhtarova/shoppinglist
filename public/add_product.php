@@ -13,4 +13,5 @@ $result->execute($data);
 
 //header("Location: ".$_SERVER['HTTP_REFERER']);
 
-header('Location: /select_product.php');
+$header = 'Location: /'.$_ENV['LOCATION'].'select_product.php';
+header($header);

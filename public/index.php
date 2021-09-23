@@ -4,12 +4,9 @@ session_start();
 require_once 'bootstrap.php';
 
 $id=1;
+$model_lists=[];
 
-//вариант передави выбранного листа напрямую
-/*if(isset($_GET['id']))
-{
-    $id= $_GET['id'];
-}*/
+
 //выбор листа из сессии
 //var_dump($_SESSION);
 if (isset($_SESSION['list_id'])) {

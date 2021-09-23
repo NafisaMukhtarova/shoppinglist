@@ -15,4 +15,5 @@ $id = $pdo->lastInsertId();
 $_SESSION['list_id']=$id;
 //var_dump($_SESSION);
 
-header('Location: /');
+$header = 'Location: /'.$_ENV['LOCATION'];
+header($header);

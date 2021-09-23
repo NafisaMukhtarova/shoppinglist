@@ -50,7 +50,7 @@ echo $handlebars->render("send_mail", $model);
 if ($_SERVER['REQUEST_METHOD'] == 'POST')
 {
     echo "ОТПРАВЛЯЕМ";
-    var_dump ($_POST);
+    //var_dump ($_POST);
     $mail = new PHPMailer(true);
 
     $host = $_ENV['MAIL_HOST'];
@@ -98,9 +98,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     } catch (Exception $e) {
         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 
-                $log = new Logger('send_mail.php');
-                $log->pushHandler(new StreamHandler(__DIR__ .'/logs/debug/log', Logger::DEBUG));
+            $log = new Logger('send_mail.php');
+            $log->pushHandler(new StreamHandler(__DIR__ .'/logs/debug/log', Logger::DEBUG));
                 
-                $log->debug('Message could not be sent. Mailer Error: ', ['message' => $mail->ErrorInfo]);
+            $log->debug('Message could not be sent. Mailer Error: ', ['message' => $mail->ErrorInfo]);
     }
 }

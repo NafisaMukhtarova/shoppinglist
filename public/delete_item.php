@@ -8,4 +8,5 @@ var_dump($data);
 $result = $pdo->prepare("DELETE FROM `shopping_list` WHERE `shopping_list_id`= :id"); 
 $result->execute($data);
 
-header('Location: /');
+$header = 'Location: /'.$_ENV['LOCATION'];
+header($header);

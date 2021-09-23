@@ -26,4 +26,5 @@ if (!empty(trim($item))) {
     $result_it->execute([':list_id'=>$list_id,':item'=>$item]);
 }
 
-header('Location: /');
+$header = 'Location: /'.$_ENV['LOCATION'];
+header($header);

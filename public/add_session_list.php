@@ -5,4 +5,6 @@ echo $_GET['id'];
 echo ' устанавливаем сессию ';
 
 $_SESSION['list_id']=$_GET['id'];
-header('Location: /');
+
+$header = 'Location: /'.$_ENV['LOCATION'];
+header($header);
